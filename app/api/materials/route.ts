@@ -4,7 +4,7 @@ import path from "node:path";
 import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import { getUserContext } from "@/lib/auth/guards";
-import { prisma } from "@/lib/db";
+import { db as prisma } from "@/lib/db";
 
 const MAX_FILE_SIZE = 15 * 1024 * 1024; // 15 МБ
 const STORAGE_DIR = path.join(process.cwd(), "storage", "materials");
