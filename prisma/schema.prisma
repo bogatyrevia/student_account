@@ -43,6 +43,7 @@ model User {
   sessions      Session[]
   notifications Notification[]
   announcements Announcement[]
+  materials     Material[]
 }
 
 model Session {
@@ -275,6 +276,7 @@ model Discipline {
   grades    Grade[]
   marks     Mark[]
   deadlines Deadline[]
+  materials Material[]
 }
 
 enum LessonStatus {
@@ -560,4 +562,24 @@ model Notification {
 
   @@index([userId, createdAt])
   @@index([announcementId])
+}
+
+// ─── Учебные материалы ──────────────────────────────────────────────
+
+model Material {
+  id           String     @id @default(cuid())
+  title        String
+  fileName     String
+  storedName   String     @unique
+  mimeType     String
+  sizeBytes    Int
+  course       Int        /// Курс / год обучения (1, 2, 3, 4...)
+  disciplineId String
+  discipline   Discipline @relation(fields: [disciplineId], references: [id], onDelete: Cascade)
+  authorId     String
+  author       User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+
+  @@index([course, disciplineId])
+  @@index([createdAt])
 }
