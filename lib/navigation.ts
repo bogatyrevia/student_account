@@ -6,7 +6,7 @@
  * Модуль без серверного и клиентского кода: его импортируют и guards (сервер), и меню (браузер).
  */
 
-export type NavIcon = "sun" | "calendar" | "map" | "file" | "user" | "inbox" | "chart" | "pen" | "bell" | "send";
+export type NavIcon = "sun" | "calendar" | "map" | "file" | "user" | "inbox" | "chart" | "pen" | "bell" | "send" | "folder";
 
 export type NavItem = {
   href: string;
@@ -22,6 +22,7 @@ export const NAV: Record<NavRole, NavItem[]> = {
   STUDENT: [
     { href: "/today", label: "Сегодня", icon: "sun" },
     { href: "/schedule", label: "Расписание", icon: "calendar" },
+    { href: "/materials", label: "Материалы", icon: "folder" },
     { href: "/map", label: "Карта", icon: "map" },
     { href: "/grades", label: "Оценки", icon: "chart" },
     { href: "/requests", label: "Заявки", icon: "file" },
@@ -30,6 +31,7 @@ export const NAV: Record<NavRole, NavItem[]> = {
   STAFF: [
     { href: "/staff", label: "Заявки", icon: "inbox" },
     { href: "/staff/marks", label: "Оценки", icon: "pen" },
+    { href: "/materials", label: "Материалы", icon: "folder" },
     // «Рассылка», а не «Уведомления»: 6 пунктов на 360 px — длинная подпись обрезалась (как у преподавателя)
     { href: "/staff/notifications", label: "Рассылка", icon: "send" },
     { href: "/schedule", label: "Расписание", icon: "calendar" },
@@ -40,6 +42,7 @@ export const NAV: Record<NavRole, NavItem[]> = {
   TEACHER: [
     { href: "/schedule", label: "Расписание", icon: "calendar" },
     { href: "/teacher/marks", label: "Журнал", icon: "pen" },
+    { href: "/materials", label: "Материалы", icon: "folder" },
     { href: "/teacher/notifications", label: "Рассылка", icon: "send" },
     { href: "/map", label: "Карта", icon: "map" },
     { href: "/teacher/profile", label: "Профиль", icon: "user" },
