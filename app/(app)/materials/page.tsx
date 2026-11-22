@@ -4,7 +4,7 @@ import { Download, FileText } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/states";
 import { requireUser } from "@/lib/auth/guards";
-import { prisma } from "@/lib/db";
+import { db as prisma } from "@/lib/db";
 import { cn, formatDateTime } from "@/lib/utils";
 import { MaterialUploadForm } from "./upload-form";
 
