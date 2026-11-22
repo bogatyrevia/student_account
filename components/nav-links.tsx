@@ -1,10 +1,10 @@
 "use client";
 
-import { Bell, CalendarDays, Send, ChartColumn, FileText, Inbox, MapPinned, NotebookPen, Sun, UserRound } from "lucide-react";
-import Link from "next/link";
+import { Bell, CalendarDays, Send, ChartColumn, FileText, FolderOpen, Inbox, MapPinned, NotebookPen, Sun, UserRound } from "lucide-react";import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { activeNavHref, type NavIcon, type NavItem } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
+
 
 // Иконки задаются строкой: серверный компонент не может передать функцию в клиентский.
 const ICONS: Record<NavIcon, typeof Sun> = {
@@ -18,8 +18,8 @@ const ICONS: Record<NavIcon, typeof Sun> = {
   pen: NotebookPen,
   bell: Bell,
   send: Send,
+  folder: FolderOpen,
 };
-
 const STYLES = {
   bottom: {
     list: "flex",
