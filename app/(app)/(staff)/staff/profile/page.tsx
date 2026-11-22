@@ -47,7 +47,7 @@ export default async function StaffProfilePage() {
           <AboutCard data={about} note="Этот текст видите только вы." />
         </div>
 
-        <PasswordCard lock={passwordLock} />
+        <PasswordCard/>
       </div>
     </div>
   );
