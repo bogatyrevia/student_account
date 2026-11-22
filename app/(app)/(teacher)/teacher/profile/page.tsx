@@ -62,7 +62,7 @@ export default async function TeacherProfilePage() {
           />
         </div>
 
-        <PasswordCard lock={passwordLock} />
+        <PasswordCard/>
       </div>
     </div>
   );
